@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Gestion Biblio</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body onload="initApp()">
+<div class="wrapper">
+
+<h1>📚 BIBLIO MANAGER PRO</h1>
+
+<div class="input-zone">
+  <input type="text" id="inp_A" placeholder="Titre...">
+  <input type="text" id="inp_B" placeholder="Auteur...">
+
+  <select id="sel_X">
+    <option value="1">Science-Fiction</option>
+    <option value="2">Documentaire</option>
+    <option value="3">Roman</option>
+  </select>
+
+  <input type="text" id="inp_C" placeholder="ISBN">
+  <button class="btn-add" id="saveBtn">ENREGISTRER</button>
+  <br><br>
+
+  Recherche :
+  <input type="text" id="searchInput" style="background:#ffffcc;color:black;">
+</div>
+
+<p id="zone_m"></p>
+
+<h3>Inventaire (<span id="cpt">0</span>)</h3>
+
+<table id="tab">
+  <thead>
+    <tr>
+      <th>Num</th>
+      <th>Info Livre</th>
+      <th>Type</th>
+      <th>Détails</th>
+      <th>Opt</th>
+    </tr>
+  </thead>
+  <tbody id="corps_du_tableau"></tbody>
+</table>
+
+<br>
+<button id="resetBtn">⚠️ RAZ</button>
+
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
