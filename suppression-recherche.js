@@ -1,3 +1,6 @@
+
+
+
 // Suppression
 function delBook(id) {
   if (!confirm("Supprimer ?")) return;
@@ -16,19 +19,24 @@ function search(value) {
 
   rows.forEach(row => {
     const cell = row.getElementsByTagName("td")[1];
-    const text = cell.textContent.toUpperCase();
-    row.style.display = text.includes(filter) ? "" : "none";
+    if (cell) {
+        const text = cell.textContent.toUpperCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+    }
   });
 }
 
-// RAZ
+// RAZ (Reset complet)
 function resetApp() {
   localStorage.clear();
   location.reload();
 }
-// Message
+
+// Message flash
 function showMessage(msg) {
   const z = document.getElementById("zone_m");
-  z.innerText = msg;
-  setTimeout(() => z.innerText = "", 3000);
+  if(z) {
+    z.innerText = msg;
+    setTimeout(() => z.innerText = "", 3000);
+  }
 }
